@@ -58,9 +58,10 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar/>
-            <Route exact path="/" component={Landing}/>
-            <div className="container">
-              <Switch>
+            <Switch>
+              <Route exact path="/" component={Landing}/>
+              <div className="container">
+                <Switch>
                 <Route exact path="/register" component={Register}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/profiles" component={Profiles}/>
@@ -73,8 +74,9 @@ class App extends Component {
                 <PrivateRoute exact path="/feed" component={Posts}/>
                 <PrivateRoute exact path="/post/:id" component={Post}/>
                 <Route component={NotFound}/>
-              </Switch>
-            </div>
+                </Switch>
+              </div>
+            </Switch>
             <Footer/>
           </div>
         </Router>
